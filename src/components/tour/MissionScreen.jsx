@@ -135,7 +135,7 @@ export default function MissionScreen({ mission, stationId, isLast, onComplete }
                 animate={{ opacity: [0.6, 1, 0.6] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                לחצו על המעטפה!
+                לחצו על המעטפה ותפעילו סאונד 🔊
               </motion.p>
             </motion.div>
           )}

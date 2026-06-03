@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(npx vite:*)",
+      "Bash(git config:*)",
+      "Bash(gh auth:*)",
+      "Read(//c/Users/shellyle/OneDrive - Check Point Software Technologies Ltd/Desktop/מיזם/בר וחן/**)",
+      "Bash(rm -rf \"c:/Users/shellyle/OneDrive - Check Point Software Technologies Ltd/Desktop/מיזם/בר וחן/food-tour-app/.git\")",
+      "Bash(rm -rf \"c:/Users/shellyle/OneDrive - Check Point Software Technologies Ltd/Desktop/מיזם/בר וחן/food-tour-app/dist\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\shellyle\\Downloads\\your-story-tour\\food-tour-app-v2\\src\\components\\tour",
+      "c:\\Users\\shellyle\\Downloads\\your-story-tour\\food-tour-app-v3\\src\\components\\tour"
+    ]
+  }
+}

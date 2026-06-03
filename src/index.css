@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Fredoka+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* === THEME: WARM & PLAYFUL (default) === */
+    --background: 38 100% 97%;
+    --foreground: 20 30% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 30% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 30% 15%;
+    --primary: 350 80% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 35 95% 60%;
+    --secondary-foreground: 20 30% 15%;
+    --muted: 30 30% 92%;
+    --muted-foreground: 20 15% 45%;
+    --accent: 160 60% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 30% 85%;
+    --input: 30 30% 85%;
+    --ring: 350 80% 55%;
+    --radius: 1rem;
+  }
+
+  /* === THEME: VIBRANT NEON (alternative - uncomment to use) ===
+  :root {
+    --background: 260 20% 8%;
+    --foreground: 60 100% 95%;
+    --card: 260 20% 12%;
+    --card-foreground: 60 100% 95%;
+    --popover: 260 20% 12%;
+    --popover-foreground: 60 100% 95%;
+    --primary: 320 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 260 20% 8%;
+    --muted: 260 15% 20%;
+    --muted-foreground: 260 15% 60%;
+    --accent: 60 100% 55%;
+    --accent-foreground: 260 20% 8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 260 15% 25%;
+    --input: 260 15% 25%;
+    --ring: 320 100% 60%;
+    --radius: 0.75rem;
+  }
+  */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Rubik', sans-serif;
+    overscroll-behavior: none;
+    /* Push content above the iPhone home indicator */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  /* Prevent zoom on input focus on iOS */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+  /* Remove 300ms tap delay on all interactive elements */
+  button, a, [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+/* Safe area support for notched phones */
+.safe-top {
+  padding-top: max(2rem, env(safe-area-inset-top));
+}
+.safe-bottom {
+  padding-bottom: max(2rem, env(safe-area-inset-bottom));
+}

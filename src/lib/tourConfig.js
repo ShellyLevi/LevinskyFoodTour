@@ -14,9 +14,9 @@ export const tourConfig = {
   logoPath: "/logo.png",
 
   // הודעות דף הפתיחה
-  welcomeTitle: "חן ובר האהובים (או דובי ודובי אם נדייק 🐻❤️)",
-  welcomeSubtitle: "5 שנים יחד זה בכלל לא צחוק, וללא ספק סיבה מספיק טובה לחגוג! 🎉🥂",
-  welcomeMessage: "וכמובן לעשות את הדבר האהוב עליכם – לאכול! 🍽️✨ אז אמנם ביפן אנחנו לא... אבל תל אביב גם הולך, לא? 😉",
+  welcomeTitle: "שוש שלי, יום הולדת 26 שמח 🎂",
+  welcomeSubtitle: "איזה כיף לחגוג איתך 5 שנים, זכיתי שיש לי אותך ❤️",
+  welcomeMessage: "אז מה יותר טוב מלחגוג יחד עם הדבר האהוב עליך בעולם (אחריי כמובן), אוכל!!",
 
   // הודעות דף סיום
   endingTitle: "מקווה שנהנתם בסיור האוכל ואחד מהשני ❤️",
@@ -41,6 +41,8 @@ export const tourConfig = {
 export const missionConfig = {
   musicPath: "/audio/hamitratz.mp3",
   proposalVideoUrl: "/video/proposal.mp4",
+  meetingVideoUrl: "/images/meeting.mp4",
+  meetingAudioUrl: "/images/meeting.mp3",
 };
 
 // ============================================================
@@ -142,10 +144,10 @@ export const missions = [
   {
     stationId: 1,
     isFirstMission: true, // מפעיל את האינטרו המיוחד עם המעטפה והמוזיקה
-    title: "משימה 1: נשיקה! 💋",
-    description: "זה הזמן לתעד! צלמו תמונה שלכם מתנשקים ותעלו אותה כאן 😘",
-    requiresPhoto: true,
-    photoPrompt: "📸 העלו תמונה שלכם מתנשקים!",
+    isLastMission: true,  // מפעיל את חשיפת הסרטון
+    title: "משימה ראשונה: ספרו על ההיכרות שלכם 💑",
+    description: "היזכרו יחד בסיפור ההיכרות שלכם, איך נפגשתם ואיפה הכל התחיל 🥰",
+    requiresPhoto: false,
   },
   {
     stationId: 2,
@@ -171,6 +173,13 @@ export const missions = [
     description: "תמצאו את התמונה הראשונה שלכם יחד!\n\nתזכרו ביחד מתי היא צולמה 🥹\n\nועכשיו תעלו אותה לפה כמובן! ⬇️",
     requiresPhoto: true,
     photoPrompt: "📷 העלו את התמונה הראשונה שלכם יחד!",
+  },
+  {
+    stationId: 6,
+    title: "משימה אחרונה: נשיקה! 💋",
+    description: "זה הזמן לתעד! צלמו תמונה שלכם מתנשקים ותעלו אותה כאן 😘",
+    requiresPhoto: true,
+    photoPrompt: "📸 העלו תמונה שלכם מתנשקים!",
   },
 ];
 

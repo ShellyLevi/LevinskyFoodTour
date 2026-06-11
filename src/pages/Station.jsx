@@ -168,7 +168,7 @@ export default function Station() {
                 <motion.div key="photo" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="text-center">
                   <div className="bg-gradient-to-r from-sky-100 to-indigo-100 rounded-2xl p-5 mb-4 border border-sky-200/50">
                     <p className="text-xl font-bold text-foreground mb-1">📸 לא לשכוח לתעד! 📸</p>
-                    <p className="text-sm text-foreground/70 mb-4">צלמו כמה שתרצו! 🤳</p>
+                    <p className="text-sm text-foreground/70 mb-4">צלמו כמה שתרצו!</p>
                     <PhotoCapture
                       stationId={station.id}
                       onPhotoAdded={() => setShowNoPhotoWarning(false)}
@@ -192,7 +192,7 @@ export default function Station() {
                     onClick={handleNextStation}
                     className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-full py-6 text-lg font-bold shadow-lg mt-4"
                   >
-                    {isLast ? 'בייי בייי סיימנו! 🎊' : 'למקום הבא! ➡️'}
+                    {(isLast && !stationMission) ? 'ביי ביי סיימנו! 🎊' : 'לתחנה הבאה! ➡️'}
                   </Button>
                 </motion.div>
               )}

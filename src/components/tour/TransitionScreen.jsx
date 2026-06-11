@@ -46,12 +46,12 @@ export default function TransitionScreen({ nextPath }) {
                 {transitionImage.caption}
               </motion.p>
             )}
-            <p className="text-foreground/60 text-sm font-medium">בדרך למקום הבא... 🏃‍♀️</p>
+            <p className="text-foreground/60 text-sm font-medium">בדרך לתחנה הבאה... 🏃‍♀️</p>
           </motion.div>
         ) : (
           /* Without image — animated footsteps */
           <>
-            <p className="text-2xl font-bold text-foreground mb-8">בדרך למקום הבא... 🏃‍♀️</p>
+            <p className="text-2xl font-bold text-foreground mb-8">בדרך לתחנה הבאה... 🏃‍♀️</p>
             <div className="flex flex-col items-center gap-4">
               {['👣', '👣', '👣', '👣', '👣'].map((step, i) => (
                 <motion.span

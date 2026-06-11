@@ -13,6 +13,13 @@ export default function Welcome() {
     <div dir="rtl" className="min-h-screen relative overflow-hidden bg-gradient-to-br from-rose-200 via-amber-100 to-orange-200">
       <FoodEmojiBg />
 
+      {/* לוגו — פינה שמאל עליון, מחוץ לכרטיס */}
+      {tourConfig.logoPath && (
+        <div className="absolute top-4 left-4 z-20">
+          <img src={tourConfig.logoPath} alt="Your Story Tour" className="h-24 w-24 object-contain rounded-full shadow-lg" />
+        </div>
+      )}
+
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-between px-6 py-8 safe-top">
         <div className="flex-1 flex flex-col items-center justify-center w-full">
 
@@ -38,27 +45,23 @@ export default function Welcome() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-2xl max-w-sm w-full text-center border border-white/50"
           >
-            {/* Logo - small, top of card */}
-            {tourConfig.logoPath && (
-              <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.5, type: 'spring', bounce: 0.4 }}
-                className="flex justify-center mb-3"
-              >
-                <img
-                  src={tourConfig.logoPath}
-                  alt="Your Story Tour"
-                  className="h-28 w-28 object-contain rounded-full shadow-md"
-                />
-              </motion.div>
-            )}
+            {/* תמונת נדב */}
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.5, type: 'spring', bounce: 0.4 }}
+              className="flex justify-center mb-3"
+            >
+              <img
+                src="/images/nadav.jpeg"
+                alt="נדב ושוש"
+                className="h-32 w-32 object-cover rounded-full shadow-md border-4 border-white"
+              />
+            </motion.div>
 
             <h1 className="text-2xl font-black text-foreground leading-relaxed mb-2">
               {tourConfig.welcomeTitle}
             </h1>
-
-            <div className="text-5xl my-4">🥂</div>
 
             <h2 className="text-xl font-bold text-primary mb-4">
               {tourConfig.welcomeSubtitle}

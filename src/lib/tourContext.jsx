@@ -4,6 +4,7 @@ const TourContext = createContext(null);
 
 export function TourProvider({ children }) {
   const [photos, setPhotos] = useState({});
+  const [collageUrl, setCollageUrl] = useState(null);
 
   const addPhoto = (stationId, photoUrl) => {
     setPhotos(prev => ({
@@ -25,7 +26,7 @@ export function TourProvider({ children }) {
   const getTotalCount = () => Object.values(photos).flat().length;
 
   return (
-    <TourContext.Provider value={{ photos, addPhoto, removePhoto, getPhotos, getAllPhotos, hasPhotos, getTotalCount }}>
+    <TourContext.Provider value={{ photos, addPhoto, removePhoto, getPhotos, getAllPhotos, hasPhotos, getTotalCount, collageUrl, setCollageUrl }}>
       {children}
     </TourContext.Provider>
   );

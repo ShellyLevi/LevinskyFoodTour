@@ -16,23 +16,24 @@ function WhatsAppIcon({ className = 'w-5 h-5' }) {
 }
 
 export default function Finale() {
-  const { getAllPhotos, collageUrl, setCollageUrl } = useTour();
-  const allPhotos = getAllPhotos();
+  const { getAllPhotos, getStationPhotos, collageUrl, setCollageUrl } = useTour();
+  const allPhotos = getAllPhotos();       // for individual download (includes missions)
+  const stationPhotos = getStationPhotos(); // for collage only
 
   const canvasRef = useRef(null);
-  const [collageState, setCollageState] = useState(collageUrl ? 'done' : 'idle'); // idle | joke | generating | done
+  const [collageState, setCollageState] = useState(collageUrl ? 'done' : 'idle'); // idle | generating | done
   const [error, setError] = useState(null);
 
   const generateCollage = async () => {
-    if (allPhotos.length === 0) {
-      setError('אין תמונות לקולאז׳ — צלמו קודם!');
+    if (stationPhotos.length === 0) {
+      setError('אין תמונות מהתחנות לקולאז׳ — צלמו קודם!');
       return;
     }
     setCollageState('generating');
     setError(null);
 
     try {
-      const photos = allPhotos;
+      const photos = stationPhotos;
       const TILE = 280;
       const GAP = 12;
       const HEADER = 70;
@@ -216,7 +217,10 @@ export default function Finale() {
           <div className="text-4xl mb-3">🏆🎊🏆</div>
           <h2 className="text-xl font-black text-foreground mb-2">סיימתם את כל התחנות!</h2>
           <p className="text-sm text-foreground/70 mb-1">
-            יש לכם {allPhotos.length} תמונות מהסיור 📸
+            {stationPhotos.length} תמונות מהתחנות 📸
+            {allPhotos.length > stationPhotos.length && (
+              <span className="text-xs text-foreground/50"> + {allPhotos.length - stationPhotos.length} ממשימות</span>
+            )}
           </p>
 
           {error && (
@@ -227,36 +231,12 @@ export default function Finale() {
           {collageState === 'idle' && (
             <Button
               size="lg"
-              onClick={() => setCollageState('joke')}
+              onClick={generateCollage}
               className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full w-full py-5 text-base font-bold shadow-lg gap-2 mt-3"
             >
               <Image className="w-5 h-5" />
               צור קולאז׳ למזכרת 🖼️
             </Button>
-          )}
-
-          {/* ה-Easter Egg 😂 */}
-          {collageState === 'joke' && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="mt-3 space-y-3"
-            >
-              <img
-                src="/images/marriage jpg.png"
-                alt="הפתעה"
-                className="w-full rounded-2xl shadow-lg border-2 border-white"
-              />
-              <Button
-                size="lg"
-                onClick={generateCollage}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-full py-4 text-sm font-bold shadow-lg"
-              >
-                אופס... זה לא הקולאז׳ הנכון 😅
-                <br />
-                לחץ כאן ליצירת קולאז׳ אמיתי!
-              </Button>
-            </motion.div>
           )}
 
           {/* יוצר קולאז' */}

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { MapPin, Navigation } from 'lucide-react';
-import { stations, missions } from '@/lib/tourConfig';
+import { stations, coupleMissions, friendMissions } from '@/lib/tourConfig';
 import { useTour } from '@/lib/tourContext';
 import PhotoCapture from '@/components/tour/PhotoCapture';
 import PhotoGrid from '@/components/tour/PhotoGrid';
@@ -15,7 +15,7 @@ export default function Station() {
   const navigate = useNavigate();
   const stationIndex = parseInt(id) - 1;
   const station = stations[stationIndex];
-  const { getPhotos, removePhoto } = useTour();
+  const { getPhotos, removePhoto, groupType } = useTour();
 
   const [phase, setPhase] = useState('arrive');
   const [showNoPhotoWarning, setShowNoPhotoWarning] = useState(false);
@@ -32,6 +32,7 @@ export default function Station() {
 
   const isLast = stationIndex === stations.length - 1;
   const nextPath = isLast ? '/finale' : `/transition/${stationIndex + 2}`;
+  const missions = groupType === 'friends' ? friendMissions : coupleMissions;
   const stationMission = missions?.find(m => m.stationId === station.id);
   const stationPhotos = getPhotos(station.id);
 
@@ -167,7 +168,7 @@ export default function Station() {
               {phase === 'photo' && (
                 <motion.div key="photo" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="text-center">
                   <div className="bg-gradient-to-r from-sky-100 to-indigo-100 rounded-2xl p-5 mb-4 border border-sky-200/50">
-                    <p className="text-xl font-bold text-foreground mb-1">📸 לא לשכוח לתעד! 📸</p>
+                    <p className="text-xl font-bold text-foreground mb-1">לא לשכוח לתעד!</p>
                     <p className="text-sm text-foreground/70 mb-4">צלמו כמה שתרצו!</p>
                     <PhotoCapture
                       stationId={station.id}
@@ -192,7 +193,7 @@ export default function Station() {
                     onClick={handleNextStation}
                     className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-full py-6 text-lg font-bold shadow-lg mt-4"
                   >
-                    {(isLast && !stationMission) ? 'ביי ביי סיימנו! 🎊' : 'לתחנה הבאה! ➡️'}
+                    {(isLast && !stationMission) ? 'ביי ביי סיימנו! 🎊' : 'לתחנה הבאה!'}
                   </Button>
                 </motion.div>
               )}

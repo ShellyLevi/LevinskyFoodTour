@@ -22,8 +22,6 @@ export default function MissionScreen({ mission, stationId, isLast, onComplete }
   const [subPhase, setSubPhase] = useState(mission.isFirstMission ? 'envelope' : 'task');
   const [showPhotoWarning, setShowPhotoWarning] = useState(false);
   const audioRef = useRef(null);
-  const videoRef = useRef(null);
-  const meetingAudioRef = useRef(null);
   const missionKey = `mission_${stationId}`;
   const { getPhotos, removePhoto } = useTour();
   const missionPhotos = getPhotos(missionKey);
@@ -47,10 +45,6 @@ export default function MissionScreen({ mission, stationId, isLast, onComplete }
   const handleComplete = () => {
     if (mission.requiresPhoto && missionPhotos.length === 0) {
       setShowPhotoWarning(true);
-      return;
-    }
-    if (mission.isLastMission) {
-      setSubPhase('meeting-reveal');
       return;
     }
     onComplete();
@@ -261,84 +255,7 @@ export default function MissionScreen({ mission, stationId, isLast, onComplete }
                 onClick={handleComplete}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-full py-5 text-base font-bold shadow-lg"
               >
-                {mission.isLastMission ? 'יאללה לתחנה הבאה' : isLast ? 'יאללה לסיום! 🎊' : 'יאללה לתחנה הבאה! ➡️'}
-              </Button>
-            </motion.div>
-          )}
-
-          {/* ─── שלב: חשיפת סרטון ההיכרות ─── */}
-          {subPhase === 'meeting-reveal' && (
-            <motion.div
-              key="meeting-reveal"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              className="bg-white/90 backdrop-blur-md rounded-3xl p-8 max-w-sm w-full shadow-2xl border border-white/50 text-center"
-            >
-              <motion.div
-                className="text-6xl mb-4"
-                animate={{ scale: [1, 1.15, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                🎬
-              </motion.div>
-              <h2 className="text-2xl font-black text-foreground mb-3">רגע.....</h2>
-              <p className="text-lg font-bold text-primary leading-relaxed">
-                בואו נראה אילוסטרציה קטנה של איך באמת הכרתם 🥰
-              </p>
-              <Button
-                size="lg"
-                onClick={() => setSubPhase('meeting-video')}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-full py-5 text-base font-bold shadow-lg mt-6"
-              >
-                לחץ כאן לצפייה 🎥
-              </Button>
-            </motion.div>
-          )}
-
-          {/* ─── שלב: סרטון ההיכרות ─── */}
-          {subPhase === 'meeting-video' && (
-            <motion.div
-              key="meeting-video"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              className="bg-white/90 backdrop-blur-md rounded-3xl p-4 max-w-sm w-full shadow-2xl border border-white/50 text-center"
-            >
-              {/* אודיו נפרד לסינכרון עם הוידאו */}
-              <audio ref={meetingAudioRef} src={missionConfig.meetingAudioUrl} preload="auto" />
-              <video
-                ref={videoRef}
-                src={missionConfig.meetingVideoUrl}
-                muted
-                controls
-                playsInline
-                className="w-full rounded-2xl shadow-lg mb-4"
-                onPlay={() => {
-                  if (meetingAudioRef.current) {
-                    meetingAudioRef.current.currentTime = videoRef.current.currentTime;
-                    meetingAudioRef.current.play().catch(() => {});
-                  }
-                }}
-                onPause={() => meetingAudioRef.current?.pause()}
-                onSeeked={() => {
-                  if (meetingAudioRef.current) {
-                    meetingAudioRef.current.currentTime = videoRef.current.currentTime;
-                  }
-                }}
-                onTimeUpdate={() => {
-                  if (!meetingAudioRef.current || !videoRef.current) return;
-                  const diff = Math.abs(videoRef.current.currentTime - meetingAudioRef.current.currentTime);
-                  if (diff > 0.4) meetingAudioRef.current.currentTime = videoRef.current.currentTime;
-                }}
-                onEnded={() => meetingAudioRef.current?.pause()}
-              />
-              <Button
-                size="lg"
-                onClick={onComplete}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-full py-5 text-base font-bold shadow-lg"
-              >
-                לתחנה הבאה ➡️
+                {isLast ? 'יאללה לסיום! 🎊' : 'יאללה לתחנה הבאה!'}
               </Button>
             </motion.div>
           )}

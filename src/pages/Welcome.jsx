@@ -45,20 +45,6 @@ export default function Welcome() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-2xl max-w-sm w-full text-center border border-white/50"
           >
-            {/* תמונת נדב */}
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.5, type: 'spring', bounce: 0.4 }}
-              className="flex justify-center mb-3"
-            >
-              <img
-                src="/images/nadav.jpeg"
-                alt="נדב ושוש"
-                className="h-32 w-32 object-cover rounded-full shadow-md border-4 border-white"
-              />
-            </motion.div>
-
             <h1 className="text-2xl font-black text-foreground leading-relaxed mb-2">
               {tourConfig.welcomeTitle}
             </h1>
@@ -72,7 +58,7 @@ export default function Welcome() {
             </p>
 
             <div className="bg-pink-50 border border-pink-200 rounded-2xl px-4 py-3 mb-6 text-sm text-foreground/80 text-right leading-relaxed">
-              <span className="font-black">❤️ שימו לב — </span>
+              <span className="font-black">📸 שימו לב — </span>
               מוזמנים לתעד ולצלם גם מטלפון נוסף לאורך הדרך!
             </div>
 

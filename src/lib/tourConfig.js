@@ -5,7 +5,7 @@
 // ============================================================
 
 export const tourConfig = {
-  tourName: "סיור האוכל בלוינסקי",
+  tourName: "סיור האוכל הכי שווה בעיר",
 
   // שם היוצר/ת — מופיע בתחתית כל עמוד
   creatorName: "שלי לוי",
@@ -14,12 +14,12 @@ export const tourConfig = {
   logoPath: "/logo.png",
 
   // הודעות דף הפתיחה
-  welcomeTitle: "שוש שלי, יום הולדת 26 שמח 🎂",
-  welcomeSubtitle: "איזה כיף לחגוג איתך 5 שנים, זכיתי שיש לי אותך ❤️",
-  welcomeMessage: "אז מה יותר טוב מלחגוג יחד עם הדבר האהוב עליך בעולם (אחריי כמובן), אוכל!!",
+  welcomeTitle: "ברוכים הבאים לסיור האוכל הכי שווה בעיר! 🍽️🎉",
+  welcomeSubtitle: "כל סיבה היא סיבה למסיבה 🥳",
+  welcomeMessage: "תהנו! 😋",
 
   // הודעות דף סיום
-  endingTitle: "מקווה שנהנתם בסיור האוכל ואחד מהשני ❤️",
+  endingTitle: "מקווה שנהנתם בסיור האוכל הכי שווה בעיר! 🍽️",
   endingSubtitle: "כל הכבוד לכם! 🥂🎉",
   endingMessage: "",
 
@@ -40,9 +40,6 @@ export const tourConfig = {
 // ============================================================
 export const missionConfig = {
   musicPath: "/audio/hamitratz.mp3",
-  proposalVideoUrl: "/video/proposal.mp4",
-  meetingVideoUrl: "/images/meeting.mp4",
-  meetingAudioUrl: "/images/meeting.mp3",
 };
 
 // ============================================================
@@ -58,8 +55,7 @@ export const stations = [
     name: "הבורקס של אמא לוינסקי",
     address: "לוינסקי 46, תל אביב",
     emoji: "🥟",
-    // תמונת AI של הזוג אוכלים בורקס — שמרי ב: public/images/station1.jpg.png
-    image: "/images/station1.jpg.png",
+    image: "/images/station1.jpg.avif",
     imageFallback: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=80",
     description: "מוסד בורקס טורקי משפחתי ותיק שעובר מדור לדור. המקום מנוהל על ידי בני משפחת חודרה הטורקית, החל מסבא יוסף, דרך הבן מיכאל ועד הנכד יוסי. בעבר המקום היה מוכר פשוט כ\"בורקס אמא\", והוא נחשב לאחד השרידים השמורים והאותנטיים ביותר לתרבות הבורקס הבלקנית-טורקית שהקימה את שוק לוינסקי. הבצק פה נעשה בעבודת יד ומבוסס על עושר שומני מסורתי וגבינות נימוחות כמו שצריך.",
     recommendation: "חלקו בורקס אחד יחד 🥟",
@@ -71,8 +67,7 @@ export const stations = [
     name: "יפני – Yapani",
     address: "מרחביה 3, תל אביב",
     emoji: "🍙",
-    // תמונת AI של הזוג אוכלים אוניגירי — שמרי ב: public/images/station2.jpg.png
-    image: "/images/station2.jpg.png",
+    image: "/images/station2.jpg.webp",
     imageFallback: "https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=400&q=80",
     description: "יפני (Yapani) הוא מקום קטן וקסום שמתמחה באוניגירי – כדורי אורז יפניים עטופים באצות נורי עם מילויים מגוונים. המקום מביא את יפן לליבה של תל אביב.",
     recommendation: "הזמינו כל אחד אוניגרי, אל תשכחו לבקש הכנה במקום 😉",
@@ -85,8 +80,7 @@ export const stations = [
     name: "הקובה של אבי",
     address: "לוינסקי 53, תל אביב",
     emoji: "🧆",
-    // תמונת AI של הזוג אוכלים קובה — שמרי ב: public/images/station3.jpg.png
-    image: "/images/station3.jpg.png",
+    image: "/images/station3.jpg.webp",
     imageFallback: "https://images.unsplash.com/photo-1529059997568-3d847b1154f0?w=400&q=80",
     description: "הקובה של אבי ברחוב לוינסקי היא מוסד של אמת לאוהבי הקובה העיראקית. קובות מטוגנות מושלמות – קריספיות מבחוץ ועסיסיות מבפנים, עם מילוי בשר טחון מתובל להפליא.",
     recommendation: "קחו 3-4 קובות שנראות טוב בעינכם – ותחלקו! 🧆",
@@ -99,8 +93,7 @@ export const stations = [
     name: "גזוז קפה לוינסקי",
     address: "לוינסקי 41, תל אביב",
     emoji: "🥤",
-    // תמונת AI של הזוג שותים גזוז — שמרי ב: public/images/station4.jpg.png
-    image: "/images/station4.jpg.png",
+    image: "/images/station4.jpg.jpg",
     imageFallback: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80",
     description: "המקום של בני בריגה הוא כנראה אחת התחנות הכי מפורסמות בשוק כיום, ואפילו זכה לכתבות במגזינים בינלאומיים והוצאת ספר בניו יורק. בני פתח את המקום הקטנטן (עם טנדר הסוסיתא המפורסם שחונה בחוץ) כבית קפה, אבל מהר מאוד החזיר לחיים את תרבות \"הגזוז\" של תל אביב המנדטורית משנות ה-20 וה-30 – אך עם טוויסט מודרני, פראי ואמנותי. בריגה משתמש במכונת קפה משנות ה-50 שירש מהבעלים הקודמים, ורוקח את הגזוז בעזרת סירופים טבעיים, התססות פראיות של פירות עונתיים ועשבי תיבול טריים.",
     recommendation: "קחו כל אחד גזוז לאווירה טובה\n(לגמרי אפשר לבקש תוספת ג'ין 😏🍸)",
@@ -112,8 +105,7 @@ export const stations = [
     name: "Taco BA",
     address: "מרחביה 11, תל אביב",
     emoji: "🌮",
-    // תמונת AI של הזוג אוכלים טאקו עם אבוקדו — שמרי ב: public/images/station5.jpg.png
-    image: "/images/station5.jpg.png",
+    image: "/images/station5.jpg.jpeg",
     imageFallback: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80",
     description: "Taco BA הוא פינת מקסיקו קטנה בלב שוק לוינסקי. המקום מגיש טאקו טריים עם מגוון מילויים – בשר מפורק, עוף מתובל, ואופציות טבעוניות עם גוואקמולי טרי.",
     recommendation: "קחו כל אחד טאקו אחד! 🌮\nממליצים על הטאקו עם אבוקדו 🥑",
@@ -126,8 +118,7 @@ export const stations = [
     name: "דולי בייקרי",
     address: "החלוצים 2, תל אביב",
     emoji: "🍥",
-    // תמונת AI של הזוג אוכלים סינבון — שמרי ב: public/images/station6.jpg.png
-    image: "/images/station6.jpg.png",
+    image: "/images/station6.jpg.jpg",
     imageFallback: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&q=80",
     description: "בית מאפה קטנטן ומתוק שנפתח על ידי בני הזוג דור כהן (טבח) ולירז שהרבני (קונדיטורית), שהכירו כשעבדו יחד במסעדה, והשניים הפכו לזוג. השם \"דולי\" הוא חיבור של השמות שלהם. יחד הם הקימו מאפייה שמתמחה בסינבון תוך שאיפה מתמדת לשלמות. מאז שפתחו ב-2024, כבר 200 אלף אנשים טעמו את המאפים שלהם. הם לקחו את הסינבון האמריקאי הקלאסי, התאימו אותו לחך המקומי עם בצק שמרים אוורירי במרקם עננים ורוטב שמנת חמוצה.",
     recommendation: "תחלקו יחד סינבון מושלםםם 🍥✨",
@@ -138,21 +129,20 @@ export const stations = [
 ];
 
 // ============================================================
-// 🎯 משימות לאחר כל תחנה
+// 🎯 משימות לזוגות
 // ============================================================
-export const missions = [
+export const coupleMissions = [
   {
     stationId: 1,
-    isFirstMission: true, // מפעיל את האינטרו המיוחד עם המעטפה והמוזיקה
-    isLastMission: true,  // מפעיל את חשיפת הסרטון
+    isFirstMission: true,
     title: "משימה ראשונה: ספרו על ההיכרות שלכם 💑",
-    description: "היזכרו יחד בסיפור ההיכרות שלכם, איך נפגשתם ואיפה הכל התחיל 🥰",
+    description: "היזכרו יחד בסיפור ההיכרות שלכם — איך נפגשתם, איפה הכל התחיל, ומה היה הרושם הראשוני של כל אחד על השנייה 🥰",
     requiresPhoto: false,
   },
   {
     stationId: 2,
     title: "משימה 2: מילים מהלב 💬",
-    description: "כל אחד מכם יגיד לצד השני תודה / משהו יפה / משהו מרגש אחד ❤️\n\nאמנם לא תתעדו... אבל אני סומכת עליכם שתעשו זאת! 🥺",
+    description: "כל אחד מכם יגיד לצד השני תודה / משהו יפה / משהו מרגש אחד ❤️",
     requiresPhoto: false,
   },
   {
@@ -180,6 +170,52 @@ export const missions = [
     description: "זה הזמן לתעד! צלמו תמונה שלכם מתנשקים ותעלו אותה כאן 😘",
     requiresPhoto: true,
     photoPrompt: "📸 העלו תמונה שלכם מתנשקים!",
+  },
+];
+
+// ============================================================
+// 🎯 משימות לחברים
+// ============================================================
+export const friendMissions = [
+  {
+    stationId: 1,
+    isFirstMission: true,
+    title: "משימה 1: תמונה שטותית! 📸",
+    description: "צלמו את עצמכם בפוזה מצחיקה 😂\nאו איזשהי תמונה יצירתית שתהיה הכי יפה למזכרת!\n\nשחררו את היצירתיות! 🎨",
+    requiresPhoto: true,
+    photoPrompt: "📷 העלו את התמונה השטותית שלכם!",
+  },
+  {
+    stationId: 2,
+    title: "משימה 2: מילים מהלב 💬",
+    description: "כל אחד מכם יגיד לחבר/ה שלו תודה / משהו יפה / משהו מרגש אחד ❤️",
+    requiresPhoto: false,
+  },
+  {
+    stationId: 3,
+    title: "משימה 3: הוואטסאפ הראשון 📱",
+    description: "חזרו לשיחה הראשונה שלכם בוואטסאפ 💬\n\n(לא להתבכיין, יש קיצור דרך – כנסו דרך המדיה בוואטסאפ 😉)\n\nשוחחו יחד על הזכרונות האלה 😊",
+    requiresPhoto: false,
+  },
+  {
+    stationId: 4,
+    title: "משימה 4: מה אני הכי מעריך בך 🌟",
+    description: "כל אחד צריך להגיד לחבר/ה שלו תכונת אופי אחת שהוא הכי מעריך 💛\n\nהיו כנים ומרגשים! 🥹",
+    requiresPhoto: false,
+  },
+  {
+    stationId: 5,
+    title: "משימה 5: התמונה הראשונה שלכם יחד 📷",
+    description: "תמצאו את התמונה הראשונה שלכם יחד!\n\nתזכרו ביחד מתי היא צולמה 🥹\n\nועכשיו תעלו אותה לפה כמובן! ⬇️",
+    requiresPhoto: true,
+    photoPrompt: "📷 העלו את התמונה הראשונה שלכם יחד!",
+  },
+  {
+    stationId: 6,
+    title: "משימה אחרונה: תמונה כיפית! 🎉",
+    description: "סיימתם! עכשיו צלמו תמונה כיפית שתזכרו בה מהסיור הזה 🥳📸",
+    requiresPhoto: true,
+    photoPrompt: "📸 העלו את התמונה הכיפית שלכם!",
   },
 ];
 
